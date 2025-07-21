@@ -1,0 +1,45 @@
+/* styles */
+/* called by your view template */
+
+html{
+  height:100%;
+}
+
+body {
+  
+  margin: 2em;
+  background: black;
+  height:100%;
+
+}
+#container{
+  font-family: monaco,Consolas,Lucida Console,monospace;
+    color:white;
+}
+
+h1{
+  font-size: calc(15px + 4vw);
+}
+
+#container a, #container a:visited{
+ color: white;
+ text-decoration: none;
+}
+
+#source-code{
+ text-decoration: underline !important;
+ margin-bottom:10px;
+ display:block;
+}
+#mode-switch{
+  font-size: calc(6px + 1.25vw);
+  margin-top:10px;
+  display:block;
+}
+
+h3{
+  font-size: calc(12px + 2vw);
+  color:white
+
+  
+}

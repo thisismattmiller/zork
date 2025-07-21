@@ -1,0 +1,76 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Zork Text</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+
+  </head>
+  <body>
+    <div id="container">
+      
+    
+   
+
+    
+    <h1>
+      <% data.text.forEach(t => { %>
+        <%=t%></br>
+      <% }); %>
+
+    </h1>
+    
+    <h3>
+      <% data.verbs.forEach(t => { %>
+        <a href="/">&gt; <%=t%></a></br>
+      <% }); %>      
+
+      <%if (data.mode == 'tell') { %>
+        <a href="/tell/">&gt; Show Another</a>
+      <% }else{ %>
+        <a href="/jigs-up/">&gt; Show Another</a>
+      <% } %>    
+    
+      
+    </h3>
+  
+
+    <div id="source">
+      <a href="<%=data.url%>" id="source-code" target="_blank">View where this text occurs in the source code!</a>
+      
+      Text from Zork <%=data.zork%> by Infocom. Source code from <a href="https://github.com/historicalsource">Historical Source.</a> 
+    </div>
+    
+    <%if (data.mode == 'tell') { %>
+      <a href="/jigs-up/" id="mode-switch">💀 Switch to death mode ☠</a>
+    <% }else{ %>
+      <a href="/tell/" id="mode-switch">⚔️ Switch to adventure mode ⚔️</a>
+    <% } %>
+
+  </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>
